@@ -1,16 +1,8 @@
 require('dotenv').config()
 const express = require('express')
 const app = express()
+const connectDB=require('./db/indexDB')
 const port = 3000
 
-app.get('/', (req, res) => {
-    res.send('Hello world')
-})
+connectDB()
 
-app.get('/home', (req, res) => {
-    res.send('Hello from home')
-})
-
-app.listen(process.env.PORT, () => {
-    console.log(`Server is running on PORT from src ${process.env.PORT}`)
-})
